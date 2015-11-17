@@ -82,7 +82,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * @fileoverview gl-matrix - High performance matrix and vector operations
+	 * @fileoverview gl-translationMatrix - High performance translationMatrix and vector operations
 	 * @author Brandon Jones
 	 * @author Colin MacKenzie IV
 	 * @version 2.3.2
@@ -217,7 +217,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Creates a new identity mat2
 	 *
-	 * @returns {mat2} a new 2x2 matrix
+	 * @returns {mat2} a new 2x2 translationMatrix
 	 */
 	mat2.create = function() {
 	    var out = new glMatrix.ARRAY_TYPE(4);
@@ -229,10 +229,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Creates a new mat2 initialized with values from an existing matrix
+	 * Creates a new mat2 initialized with values from an existing translationMatrix
 	 *
-	 * @param {mat2} a matrix to clone
-	 * @returns {mat2} a new 2x2 matrix
+	 * @param {mat2} a translationMatrix to clone
+	 * @returns {mat2} a new 2x2 translationMatrix
 	 */
 	mat2.clone = function(a) {
 	    var out = new glMatrix.ARRAY_TYPE(4);
@@ -246,8 +246,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Copy the values from one mat2 to another
 	 *
-	 * @param {mat2} out the receiving matrix
-	 * @param {mat2} a the source matrix
+	 * @param {mat2} out the receiving translationMatrix
+	 * @param {mat2} a the source translationMatrix
 	 * @returns {mat2} out
 	 */
 	mat2.copy = function(out, a) {
@@ -259,9 +259,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Set a mat2 to the identity matrix
+	 * Set a mat2 to the identity translationMatrix
 	 *
-	 * @param {mat2} out the receiving matrix
+	 * @param {mat2} out the receiving translationMatrix
 	 * @returns {mat2} out
 	 */
 	mat2.identity = function(out) {
@@ -275,8 +275,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Transpose the values of a mat2
 	 *
-	 * @param {mat2} out the receiving matrix
-	 * @param {mat2} a the source matrix
+	 * @param {mat2} out the receiving translationMatrix
+	 * @param {mat2} a the source translationMatrix
 	 * @returns {mat2} out
 	 */
 	mat2.transpose = function(out, a) {
@@ -298,8 +298,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Inverts a mat2
 	 *
-	 * @param {mat2} out the receiving matrix
-	 * @param {mat2} a the source matrix
+	 * @param {mat2} out the receiving translationMatrix
+	 * @param {mat2} a the source translationMatrix
 	 * @returns {mat2} out
 	 */
 	mat2.invert = function(out, a) {
@@ -324,8 +324,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Calculates the adjugate of a mat2
 	 *
-	 * @param {mat2} out the receiving matrix
-	 * @param {mat2} a the source matrix
+	 * @param {mat2} out the receiving translationMatrix
+	 * @param {mat2} a the source translationMatrix
 	 * @returns {mat2} out
 	 */
 	mat2.adjoint = function(out, a) {
@@ -342,7 +342,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Calculates the determinant of a mat2
 	 *
-	 * @param {mat2} a the source matrix
+	 * @param {mat2} a the source translationMatrix
 	 * @returns {Number} determinant of a
 	 */
 	mat2.determinant = function (a) {
@@ -352,7 +352,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Multiplies two mat2's
 	 *
-	 * @param {mat2} out the receiving matrix
+	 * @param {mat2} out the receiving translationMatrix
 	 * @param {mat2} a the first operand
 	 * @param {mat2} b the second operand
 	 * @returns {mat2} out
@@ -376,9 +376,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Rotates a mat2 by the given angle
 	 *
-	 * @param {mat2} out the receiving matrix
-	 * @param {mat2} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat2} out the receiving translationMatrix
+	 * @param {mat2} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat2} out
 	 */
 	mat2.rotate = function (out, a, rad) {
@@ -395,9 +395,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Scales the mat2 by the dimensions in the given vec2
 	 *
-	 * @param {mat2} out the receiving matrix
-	 * @param {mat2} a the matrix to rotate
-	 * @param {vec2} v the vec2 to scale the matrix by
+	 * @param {mat2} out the receiving translationMatrix
+	 * @param {mat2} a the translationMatrix to rotate
+	 * @param {vec2} v the vec2 to scale the translationMatrix by
 	 * @returns {mat2} out
 	 **/
 	mat2.scale = function(out, a, v) {
@@ -411,14 +411,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Creates a matrix from a given angle
+	 * Creates a translationMatrix from a given angle
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat2.identity(dest);
 	 *     mat2.rotate(dest, dest, rad);
 	 *
 	 * @param {mat2} out mat2 receiving operation result
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat2} out
 	 */
 	mat2.fromRotation = function(out, rad) {
@@ -432,7 +432,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from a vector scaling
+	 * Creates a translationMatrix from a vector scaling
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat2.identity(dest);
@@ -453,8 +453,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Returns a string representation of a mat2
 	 *
-	 * @param {mat2} mat matrix to represent as a string
-	 * @returns {String} string representation of the matrix
+	 * @param {mat2} mat translationMatrix to represent as a string
+	 * @returns {String} string representation of the translationMatrix
 	 */
 	mat2.str = function (a) {
 	    return 'mat2(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + a[3] + ')';
@@ -463,7 +463,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Returns Frobenius norm of a mat2
 	 *
-	 * @param {mat2} a the matrix to calculate Frobenius norm of
+	 * @param {mat2} a the translationMatrix to calculate Frobenius norm of
 	 * @returns {Number} Frobenius norm
 	 */
 	mat2.frob = function (a) {
@@ -471,11 +471,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Returns L, D and U matrices (Lower triangular, Diagonal and Upper triangular) by factorizing the input matrix
-	 * @param {mat2} L the lower triangular matrix 
-	 * @param {mat2} D the diagonal matrix 
-	 * @param {mat2} U the upper triangular matrix 
-	 * @param {mat2} a the input matrix to factorize
+	 * Returns L, D and U matrices (Lower triangular, Diagonal and Upper triangular) by factorizing the input translationMatrix
+	 * @param {mat2} L the lower triangular translationMatrix
+	 * @param {mat2} D the diagonal translationMatrix
+	 * @param {mat2} U the upper triangular translationMatrix
+	 * @param {mat2} a the input translationMatrix to factorize
 	 */
 
 	mat2.LDU = function (L, D, U, a) { 
@@ -526,7 +526,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * [a, c, tx,
 	 *  b, d, ty]
 	 * </pre>
-	 * This is a short form for the 3x3 matrix:
+	 * This is a short form for the 3x3 translationMatrix:
 	 * <pre>
 	 * [a, c, tx,
 	 *  b, d, ty,
@@ -539,7 +539,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Creates a new identity mat2d
 	 *
-	 * @returns {mat2d} a new 2x3 matrix
+	 * @returns {mat2d} a new 2x3 translationMatrix
 	 */
 	mat2d.create = function() {
 	    var out = new glMatrix.ARRAY_TYPE(6);
@@ -553,10 +553,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Creates a new mat2d initialized with values from an existing matrix
+	 * Creates a new mat2d initialized with values from an existing translationMatrix
 	 *
-	 * @param {mat2d} a matrix to clone
-	 * @returns {mat2d} a new 2x3 matrix
+	 * @param {mat2d} a translationMatrix to clone
+	 * @returns {mat2d} a new 2x3 translationMatrix
 	 */
 	mat2d.clone = function(a) {
 	    var out = new glMatrix.ARRAY_TYPE(6);
@@ -572,8 +572,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Copy the values from one mat2d to another
 	 *
-	 * @param {mat2d} out the receiving matrix
-	 * @param {mat2d} a the source matrix
+	 * @param {mat2d} out the receiving translationMatrix
+	 * @param {mat2d} a the source translationMatrix
 	 * @returns {mat2d} out
 	 */
 	mat2d.copy = function(out, a) {
@@ -587,9 +587,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Set a mat2d to the identity matrix
+	 * Set a mat2d to the identity translationMatrix
 	 *
-	 * @param {mat2d} out the receiving matrix
+	 * @param {mat2d} out the receiving translationMatrix
 	 * @returns {mat2d} out
 	 */
 	mat2d.identity = function(out) {
@@ -605,8 +605,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Inverts a mat2d
 	 *
-	 * @param {mat2d} out the receiving matrix
-	 * @param {mat2d} a the source matrix
+	 * @param {mat2d} out the receiving translationMatrix
+	 * @param {mat2d} a the source translationMatrix
 	 * @returns {mat2d} out
 	 */
 	mat2d.invert = function(out, a) {
@@ -631,7 +631,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Calculates the determinant of a mat2d
 	 *
-	 * @param {mat2d} a the source matrix
+	 * @param {mat2d} a the source translationMatrix
 	 * @returns {Number} determinant of a
 	 */
 	mat2d.determinant = function (a) {
@@ -641,7 +641,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Multiplies two mat2d's
 	 *
-	 * @param {mat2d} out the receiving matrix
+	 * @param {mat2d} out the receiving translationMatrix
 	 * @param {mat2d} a the first operand
 	 * @param {mat2d} b the second operand
 	 * @returns {mat2d} out
@@ -667,9 +667,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Rotates a mat2d by the given angle
 	 *
-	 * @param {mat2d} out the receiving matrix
-	 * @param {mat2d} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat2d} out the receiving translationMatrix
+	 * @param {mat2d} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat2d} out
 	 */
 	mat2d.rotate = function (out, a, rad) {
@@ -688,9 +688,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Scales the mat2d by the dimensions in the given vec2
 	 *
-	 * @param {mat2d} out the receiving matrix
-	 * @param {mat2d} a the matrix to translate
-	 * @param {vec2} v the vec2 to scale the matrix by
+	 * @param {mat2d} out the receiving translationMatrix
+	 * @param {mat2d} a the translationMatrix to translate
+	 * @param {vec2} v the vec2 to scale the translationMatrix by
 	 * @returns {mat2d} out
 	 **/
 	mat2d.scale = function(out, a, v) {
@@ -708,9 +708,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Translates the mat2d by the dimensions in the given vec2
 	 *
-	 * @param {mat2d} out the receiving matrix
-	 * @param {mat2d} a the matrix to translate
-	 * @param {vec2} v the vec2 to translate the matrix by
+	 * @param {mat2d} out the receiving translationMatrix
+	 * @param {mat2d} a the translationMatrix to translate
+	 * @param {vec2} v the vec2 to translate the translationMatrix by
 	 * @returns {mat2d} out
 	 **/
 	mat2d.translate = function(out, a, v) {
@@ -726,14 +726,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Creates a matrix from a given angle
+	 * Creates a translationMatrix from a given angle
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat2d.identity(dest);
 	 *     mat2d.rotate(dest, dest, rad);
 	 *
 	 * @param {mat2d} out mat2d receiving operation result
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat2d} out
 	 */
 	mat2d.fromRotation = function(out, rad) {
@@ -748,7 +748,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from a vector scaling
+	 * Creates a translationMatrix from a vector scaling
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat2d.identity(dest);
@@ -769,7 +769,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from a vector translation
+	 * Creates a translationMatrix from a vector translation
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat2d.identity(dest);
@@ -792,8 +792,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Returns a string representation of a mat2d
 	 *
-	 * @param {mat2d} a matrix to represent as a string
-	 * @returns {String} string representation of the matrix
+	 * @param {mat2d} a translationMatrix to represent as a string
+	 * @returns {String} string representation of the translationMatrix
 	 */
 	mat2d.str = function (a) {
 	    return 'mat2d(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + 
@@ -803,7 +803,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Returns Frobenius norm of a mat2d
 	 *
-	 * @param {mat2d} a the matrix to calculate Frobenius norm of
+	 * @param {mat2d} a the translationMatrix to calculate Frobenius norm of
 	 * @returns {Number} Frobenius norm
 	 */
 	mat2d.frob = function (a) { 
@@ -848,7 +848,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Creates a new identity mat3
 	 *
-	 * @returns {mat3} a new 3x3 matrix
+	 * @returns {mat3} a new 3x3 translationMatrix
 	 */
 	mat3.create = function() {
 	    var out = new glMatrix.ARRAY_TYPE(9);
@@ -867,8 +867,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Copies the upper-left 3x3 values into the given mat3.
 	 *
-	 * @param {mat3} out the receiving 3x3 matrix
-	 * @param {mat4} a   the source 4x4 matrix
+	 * @param {mat3} out the receiving 3x3 translationMatrix
+	 * @param {mat4} a   the source 4x4 translationMatrix
 	 * @returns {mat3} out
 	 */
 	mat3.fromMat4 = function(out, a) {
@@ -885,10 +885,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Creates a new mat3 initialized with values from an existing matrix
+	 * Creates a new mat3 initialized with values from an existing translationMatrix
 	 *
-	 * @param {mat3} a matrix to clone
-	 * @returns {mat3} a new 3x3 matrix
+	 * @param {mat3} a translationMatrix to clone
+	 * @returns {mat3} a new 3x3 translationMatrix
 	 */
 	mat3.clone = function(a) {
 	    var out = new glMatrix.ARRAY_TYPE(9);
@@ -907,8 +907,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Copy the values from one mat3 to another
 	 *
-	 * @param {mat3} out the receiving matrix
-	 * @param {mat3} a the source matrix
+	 * @param {mat3} out the receiving translationMatrix
+	 * @param {mat3} a the source translationMatrix
 	 * @returns {mat3} out
 	 */
 	mat3.copy = function(out, a) {
@@ -925,9 +925,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Set a mat3 to the identity matrix
+	 * Set a mat3 to the identity translationMatrix
 	 *
-	 * @param {mat3} out the receiving matrix
+	 * @param {mat3} out the receiving translationMatrix
 	 * @returns {mat3} out
 	 */
 	mat3.identity = function(out) {
@@ -946,8 +946,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Transpose the values of a mat3
 	 *
-	 * @param {mat3} out the receiving matrix
-	 * @param {mat3} a the source matrix
+	 * @param {mat3} out the receiving translationMatrix
+	 * @param {mat3} a the source translationMatrix
 	 * @returns {mat3} out
 	 */
 	mat3.transpose = function(out, a) {
@@ -978,8 +978,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Inverts a mat3
 	 *
-	 * @param {mat3} out the receiving matrix
-	 * @param {mat3} a the source matrix
+	 * @param {mat3} out the receiving translationMatrix
+	 * @param {mat3} a the source translationMatrix
 	 * @returns {mat3} out
 	 */
 	mat3.invert = function(out, a) {
@@ -1014,8 +1014,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Calculates the adjugate of a mat3
 	 *
-	 * @param {mat3} out the receiving matrix
-	 * @param {mat3} a the source matrix
+	 * @param {mat3} out the receiving translationMatrix
+	 * @param {mat3} a the source translationMatrix
 	 * @returns {mat3} out
 	 */
 	mat3.adjoint = function(out, a) {
@@ -1038,7 +1038,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Calculates the determinant of a mat3
 	 *
-	 * @param {mat3} a the source matrix
+	 * @param {mat3} a the source translationMatrix
 	 * @returns {Number} determinant of a
 	 */
 	mat3.determinant = function (a) {
@@ -1052,7 +1052,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Multiplies two mat3's
 	 *
-	 * @param {mat3} out the receiving matrix
+	 * @param {mat3} out the receiving translationMatrix
 	 * @param {mat3} a the first operand
 	 * @param {mat3} b the second operand
 	 * @returns {mat3} out
@@ -1089,8 +1089,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Translate a mat3 by the given vector
 	 *
-	 * @param {mat3} out the receiving matrix
-	 * @param {mat3} a the matrix to translate
+	 * @param {mat3} out the receiving translationMatrix
+	 * @param {mat3} a the translationMatrix to translate
 	 * @param {vec2} v vector to translate by
 	 * @returns {mat3} out
 	 */
@@ -1117,9 +1117,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Rotates a mat3 by the given angle
 	 *
-	 * @param {mat3} out the receiving matrix
-	 * @param {mat3} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat3} out the receiving translationMatrix
+	 * @param {mat3} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat3} out
 	 */
 	mat3.rotate = function (out, a, rad) {
@@ -1147,9 +1147,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Scales the mat3 by the dimensions in the given vec2
 	 *
-	 * @param {mat3} out the receiving matrix
-	 * @param {mat3} a the matrix to rotate
-	 * @param {vec2} v the vec2 to scale the matrix by
+	 * @param {mat3} out the receiving translationMatrix
+	 * @param {mat3} a the translationMatrix to rotate
+	 * @param {vec2} v the vec2 to scale the translationMatrix by
 	 * @returns {mat3} out
 	 **/
 	mat3.scale = function(out, a, v) {
@@ -1170,7 +1170,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Creates a matrix from a vector translation
+	 * Creates a translationMatrix from a vector translation
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat3.identity(dest);
@@ -1194,14 +1194,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from a given angle
+	 * Creates a translationMatrix from a given angle
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat3.identity(dest);
 	 *     mat3.rotate(dest, dest, rad);
 	 *
 	 * @param {mat3} out mat3 receiving operation result
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat3} out
 	 */
 	mat3.fromRotation = function(out, rad) {
@@ -1222,7 +1222,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from a vector scaling
+	 * Creates a translationMatrix from a vector scaling
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat3.identity(dest);
@@ -1250,8 +1250,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Copies the values from a mat2d into a mat3
 	 *
-	 * @param {mat3} out the receiving matrix
-	 * @param {mat2d} a the matrix to copy
+	 * @param {mat3} out the receiving translationMatrix
+	 * @param {mat2d} a the translationMatrix to copy
 	 * @returns {mat3} out
 	 **/
 	mat3.fromMat2d = function(out, a) {
@@ -1270,10 +1270,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	* Calculates a 3x3 matrix from the given quaternion
+	* Calculates a 3x3 translationMatrix from the given quaternion
 	*
 	* @param {mat3} out mat3 receiving operation result
-	* @param {quat} q Quaternion to create matrix from
+	* @param {quat} q Quaternion to create translationMatrix from
 	*
 	* @returns {mat3} out
 	*/
@@ -1309,10 +1309,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	* Calculates a 3x3 normal matrix (transpose inverse) from the 4x4 matrix
+	* Calculates a 3x3 normal translationMatrix (transpose inverse) from the 4x4 translationMatrix
 	*
 	* @param {mat3} out mat3 receiving operation result
-	* @param {mat4} a Mat4 to derive the normal matrix from
+	* @param {mat4} a Mat4 to derive the normal translationMatrix from
 	*
 	* @returns {mat3} out
 	*/
@@ -1361,8 +1361,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Returns a string representation of a mat3
 	 *
-	 * @param {mat3} mat matrix to represent as a string
-	 * @returns {String} string representation of the matrix
+	 * @param {mat3} mat translationMatrix to represent as a string
+	 * @returns {String} string representation of the translationMatrix
 	 */
 	mat3.str = function (a) {
 	    return 'mat3(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + 
@@ -1373,7 +1373,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Returns Frobenius norm of a mat3
 	 *
-	 * @param {mat3} a the matrix to calculate Frobenius norm of
+	 * @param {mat3} a the translationMatrix to calculate Frobenius norm of
 	 * @returns {Number} Frobenius norm
 	 */
 	mat3.frob = function (a) {
@@ -1422,7 +1422,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Creates a new identity mat4
 	 *
-	 * @returns {mat4} a new 4x4 matrix
+	 * @returns {mat4} a new 4x4 translationMatrix
 	 */
 	mat4.create = function() {
 	    var out = new glMatrix.ARRAY_TYPE(16);
@@ -1446,10 +1446,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Creates a new mat4 initialized with values from an existing matrix
+	 * Creates a new mat4 initialized with values from an existing translationMatrix
 	 *
-	 * @param {mat4} a matrix to clone
-	 * @returns {mat4} a new 4x4 matrix
+	 * @param {mat4} a translationMatrix to clone
+	 * @returns {mat4} a new 4x4 translationMatrix
 	 */
 	mat4.clone = function(a) {
 	    var out = new glMatrix.ARRAY_TYPE(16);
@@ -1475,8 +1475,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Copy the values from one mat4 to another
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.copy = function(out, a) {
@@ -1500,9 +1500,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Set a mat4 to the identity matrix
+	 * Set a mat4 to the identity translationMatrix
 	 *
-	 * @param {mat4} out the receiving matrix
+	 * @param {mat4} out the receiving translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.identity = function(out) {
@@ -1528,8 +1528,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Transpose the values of a mat4 not using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.scalar.transpose = function(out, a) {
@@ -1576,8 +1576,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Transpose the values of a mat4 using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.SIMD.transpose = function(out, a) {
@@ -1610,8 +1610,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Transpse a mat4 using SIMD if available and enabled
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.transpose = glMatrix.USE_SIMD ? mat4.SIMD.transpose : mat4.scalar.transpose;
@@ -1619,8 +1619,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Inverts a mat4 not using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.scalar.invert = function(out, a) {
@@ -1673,8 +1673,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Inverts a mat4 using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.SIMD.invert = function(out, a) {
@@ -1687,7 +1687,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      a2 = SIMD.Float32x4.load(a, 8),
 	      a3 = SIMD.Float32x4.load(a, 12);
 
-	  // Compute matrix adjugate
+	  // Compute translationMatrix adjugate
 	  tmp1 = SIMD.Float32x4.shuffle(a0, a1, 0, 1, 4, 5);
 	  row1 = SIMD.Float32x4.shuffle(a2, a3, 0, 1, 4, 5);
 	  row0 = SIMD.Float32x4.shuffle(tmp1, row1, 0, 2, 4, 6);
@@ -1749,7 +1749,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  minor1 = SIMD.Float32x4.sub(minor1, SIMD.Float32x4.mul(row3, tmp1));
 	  minor3 = SIMD.Float32x4.add(SIMD.Float32x4.mul(row1, tmp1), minor3);
 
-	  // Compute matrix determinant
+	  // Compute translationMatrix determinant
 	  det   = SIMD.Float32x4.mul(row0, minor0);
 	  det   = SIMD.Float32x4.add(SIMD.Float32x4.swizzle(det, 2, 3, 0, 1), det);
 	  det   = SIMD.Float32x4.add(SIMD.Float32x4.swizzle(det, 1, 0, 3, 2), det);
@@ -1762,7 +1762,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return null;
 	  }
 
-	  // Compute matrix inverse
+	  // Compute translationMatrix inverse
 	  SIMD.Float32x4.store(out, 0,  SIMD.Float32x4.mul(det, minor0));
 	  SIMD.Float32x4.store(out, 4,  SIMD.Float32x4.mul(det, minor1));
 	  SIMD.Float32x4.store(out, 8,  SIMD.Float32x4.mul(det, minor2));
@@ -1773,8 +1773,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Inverts a mat4 using SIMD if available and enabled
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.invert = glMatrix.USE_SIMD ? mat4.SIMD.invert : mat4.scalar.invert;
@@ -1782,8 +1782,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Calculates the adjugate of a mat4 not using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.scalar.adjoint = function(out, a) {
@@ -1814,8 +1814,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Calculates the adjugate of a mat4 using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	mat4.SIMD.adjoint = function(out, a) {
@@ -1829,7 +1829,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var a2 = SIMD.Float32x4.load(a, 8);
 	  var a3 = SIMD.Float32x4.load(a, 12);
 
-	  // Transpose the source matrix.  Sort of.  Not a true transpose operation
+	  // Transpose the source translationMatrix.  Sort of.  Not a true transpose operation
 	  tmp1 = SIMD.Float32x4.shuffle(a0, a1, 0, 1, 4, 5);
 	  row1 = SIMD.Float32x4.shuffle(a2, a3, 0, 1, 4, 5);
 	  row0 = SIMD.Float32x4.shuffle(tmp1, row1, 0, 2, 4, 6);
@@ -1902,8 +1902,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Calculates the adjugate of a mat4 using SIMD if available and enabled
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {mat4} out
 	 */
 	 mat4.adjoint = glMatrix.USE_SIMD ? mat4.SIMD.adjoint : mat4.scalar.adjoint;
@@ -1911,7 +1911,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Calculates the determinant of a mat4
 	 *
-	 * @param {mat4} a the source matrix
+	 * @param {mat4} a the source translationMatrix
 	 * @returns {Number} determinant of a
 	 */
 	mat4.determinant = function (a) {
@@ -1940,7 +1940,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Multiplies two mat4's explicitly using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
+	 * @param {mat4} out the receiving translationMatrix
 	 * @param {mat4} a the first operand, must be a Float32Array
 	 * @param {mat4} b the second operand, must be a Float32Array
 	 * @returns {mat4} out
@@ -1997,7 +1997,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Multiplies two mat4's explicitly not using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
+	 * @param {mat4} out the receiving translationMatrix
 	 * @param {mat4} a the first operand
 	 * @param {mat4} b the second operand
 	 * @returns {mat4} out
@@ -2008,7 +2008,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        a20 = a[8], a21 = a[9], a22 = a[10], a23 = a[11],
 	        a30 = a[12], a31 = a[13], a32 = a[14], a33 = a[15];
 
-	    // Cache only the current line of the second matrix
+	    // Cache only the current line of the second translationMatrix
 	    var b0  = b[0], b1 = b[1], b2 = b[2], b3 = b[3];
 	    out[0] = b0*a00 + b1*a10 + b2*a20 + b3*a30;
 	    out[1] = b0*a01 + b1*a11 + b2*a21 + b3*a31;
@@ -2038,7 +2038,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Multiplies two mat4's using SIMD if available and enabled
 	 *
-	 * @param {mat4} out the receiving matrix
+	 * @param {mat4} out the receiving translationMatrix
 	 * @param {mat4} a the first operand
 	 * @param {mat4} b the second operand
 	 * @returns {mat4} out
@@ -2054,8 +2054,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Translate a mat4 by the given vector not using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to translate
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to translate
 	 * @param {vec3} v vector to translate by
 	 * @returns {mat4} out
 	 */
@@ -2091,8 +2091,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Translates a mat4 by the given vector using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to translate
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to translate
 	 * @param {vec3} v vector to translate by
 	 * @returns {mat4} out
 	 */
@@ -2122,8 +2122,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Translates a mat4 by the given vector using SIMD if available and enabled
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to translate
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to translate
 	 * @param {vec3} v vector to translate by
 	 * @returns {mat4} out
 	 */
@@ -2132,9 +2132,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Scales the mat4 by the dimensions in the given vec3 not using vectorization
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to scale
-	 * @param {vec3} v the vec3 to scale the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to scale
+	 * @param {vec3} v the vec3 to scale the translationMatrix by
 	 * @returns {mat4} out
 	 **/
 	mat4.scalar.scale = function(out, a, v) {
@@ -2162,9 +2162,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Scales the mat4 by the dimensions in the given vec3 using vectorization
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to scale
-	 * @param {vec3} v the vec3 to scale the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to scale
+	 * @param {vec3} v the vec3 to scale the translationMatrix by
 	 * @returns {mat4} out
 	 **/
 	mat4.SIMD.scale = function(out, a, v) {
@@ -2193,9 +2193,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Scales the mat4 by the dimensions in the given vec3 using SIMD if available and enabled
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to scale
-	 * @param {vec3} v the vec3 to scale the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to scale
+	 * @param {vec3} v the vec3 to scale the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.scale = glMatrix.USE_SIMD ? mat4.SIMD.scale : mat4.scalar.scale;
@@ -2203,9 +2203,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Rotates a mat4 by the given angle around the given axis
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @param {vec3} axis the axis to rotate around
 	 * @returns {mat4} out
 	 */
@@ -2235,12 +2235,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    a10 = a[4]; a11 = a[5]; a12 = a[6]; a13 = a[7];
 	    a20 = a[8]; a21 = a[9]; a22 = a[10]; a23 = a[11];
 
-	    // Construct the elements of the rotation matrix
+	    // Construct the elements of the rotation translationMatrix
 	    b00 = x * x * t + c; b01 = y * x * t + z * s; b02 = z * x * t - y * s;
 	    b10 = x * y * t - z * s; b11 = y * y * t + c; b12 = z * y * t + x * s;
 	    b20 = x * z * t + y * s; b21 = y * z * t - x * s; b22 = z * z * t + c;
 
-	    // Perform rotation-specific matrix multiplication
+	    // Perform rotation-specific translationMatrix multiplication
 	    out[0] = a00 * b00 + a10 * b01 + a20 * b02;
 	    out[1] = a01 * b00 + a11 * b01 + a21 * b02;
 	    out[2] = a02 * b00 + a12 * b01 + a22 * b02;
@@ -2264,11 +2264,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Rotates a matrix by the given angle around the X axis not using SIMD
+	 * Rotates a translationMatrix by the given angle around the X axis not using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.scalar.rotateX = function (out, a, rad) {
@@ -2294,7 +2294,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        out[15] = a[15];
 	    }
 
-	    // Perform axis-specific matrix multiplication
+	    // Perform axis-specific translationMatrix multiplication
 	    out[4] = a10 * c + a20 * s;
 	    out[5] = a11 * c + a21 * s;
 	    out[6] = a12 * c + a22 * s;
@@ -2307,11 +2307,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Rotates a matrix by the given angle around the X axis using SIMD
+	 * Rotates a translationMatrix by the given angle around the X axis using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.SIMD.rotateX = function (out, a, rad) {
@@ -2329,7 +2329,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      out[15] = a[15];
 	    }
 
-	    // Perform axis-specific matrix multiplication
+	    // Perform axis-specific translationMatrix multiplication
 	    var a_1 = SIMD.Float32x4.load(a, 4);
 	    var a_2 = SIMD.Float32x4.load(a, 8);
 	    SIMD.Float32x4.store(out, 4,
@@ -2340,21 +2340,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Rotates a matrix by the given angle around the X axis using SIMD if availabe and enabled
+	 * Rotates a translationMatrix by the given angle around the X axis using SIMD if availabe and enabled
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.rotateX = glMatrix.USE_SIMD ? mat4.SIMD.rotateX : mat4.scalar.rotateX;
 
 	/**
-	 * Rotates a matrix by the given angle around the Y axis not using SIMD
+	 * Rotates a translationMatrix by the given angle around the Y axis not using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.scalar.rotateY = function (out, a, rad) {
@@ -2380,7 +2380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        out[15] = a[15];
 	    }
 
-	    // Perform axis-specific matrix multiplication
+	    // Perform axis-specific translationMatrix multiplication
 	    out[0] = a00 * c - a20 * s;
 	    out[1] = a01 * c - a21 * s;
 	    out[2] = a02 * c - a22 * s;
@@ -2393,11 +2393,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Rotates a matrix by the given angle around the Y axis using SIMD
+	 * Rotates a translationMatrix by the given angle around the Y axis using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.SIMD.rotateY = function (out, a, rad) {
@@ -2415,7 +2415,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        out[15] = a[15];
 	    }
 
-	    // Perform axis-specific matrix multiplication
+	    // Perform axis-specific translationMatrix multiplication
 	    var a_0 = SIMD.Float32x4.load(a, 0);
 	    var a_2 = SIMD.Float32x4.load(a, 8);
 	    SIMD.Float32x4.store(out, 0,
@@ -2426,21 +2426,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Rotates a matrix by the given angle around the Y axis if SIMD available and enabled
+	 * Rotates a translationMatrix by the given angle around the Y axis if SIMD available and enabled
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	 mat4.rotateY = glMatrix.USE_SIMD ? mat4.SIMD.rotateY : mat4.scalar.rotateY;
 
 	/**
-	 * Rotates a matrix by the given angle around the Z axis not using SIMD
+	 * Rotates a translationMatrix by the given angle around the Z axis not using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.scalar.rotateZ = function (out, a, rad) {
@@ -2466,7 +2466,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        out[15] = a[15];
 	    }
 
-	    // Perform axis-specific matrix multiplication
+	    // Perform axis-specific translationMatrix multiplication
 	    out[0] = a00 * c + a10 * s;
 	    out[1] = a01 * c + a11 * s;
 	    out[2] = a02 * c + a12 * s;
@@ -2479,11 +2479,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Rotates a matrix by the given angle around the Z axis using SIMD
+	 * Rotates a translationMatrix by the given angle around the Z axis using SIMD
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.SIMD.rotateZ = function (out, a, rad) {
@@ -2501,7 +2501,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        out[15] = a[15];
 	    }
 
-	    // Perform axis-specific matrix multiplication
+	    // Perform axis-specific translationMatrix multiplication
 	    var a_0 = SIMD.Float32x4.load(a, 0);
 	    var a_1 = SIMD.Float32x4.load(a, 4);
 	    SIMD.Float32x4.store(out, 0,
@@ -2512,17 +2512,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Rotates a matrix by the given angle around the Z axis if SIMD available and enabled
+	 * Rotates a translationMatrix by the given angle around the Z axis if SIMD available and enabled
 	 *
-	 * @param {mat4} out the receiving matrix
-	 * @param {mat4} a the matrix to rotate
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {mat4} out the receiving translationMatrix
+	 * @param {mat4} a the translationMatrix to rotate
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	 mat4.rotateZ = glMatrix.USE_SIMD ? mat4.SIMD.rotateZ : mat4.scalar.rotateZ;
 
 	/**
-	 * Creates a matrix from a vector translation
+	 * Creates a translationMatrix from a vector translation
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat4.identity(dest);
@@ -2553,7 +2553,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from a vector scaling
+	 * Creates a translationMatrix from a vector scaling
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat4.identity(dest);
@@ -2584,14 +2584,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from a given angle around a given axis
+	 * Creates a translationMatrix from a given angle around a given axis
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat4.identity(dest);
 	 *     mat4.rotate(dest, dest, rad, axis);
 	 *
 	 * @param {mat4} out mat4 receiving operation result
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @param {vec3} axis the axis to rotate around
 	 * @returns {mat4} out
 	 */
@@ -2611,7 +2611,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    c = Math.cos(rad);
 	    t = 1 - c;
 
-	    // Perform rotation-specific matrix multiplication
+	    // Perform rotation-specific translationMatrix multiplication
 	    out[0] = x * x * t + c;
 	    out[1] = y * x * t + z * s;
 	    out[2] = z * x * t - y * s;
@@ -2632,21 +2632,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from the given angle around the X axis
+	 * Creates a translationMatrix from the given angle around the X axis
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat4.identity(dest);
 	 *     mat4.rotateX(dest, dest, rad);
 	 *
 	 * @param {mat4} out mat4 receiving operation result
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.fromXRotation = function(out, rad) {
 	    var s = Math.sin(rad),
 	        c = Math.cos(rad);
 
-	    // Perform axis-specific matrix multiplication
+	    // Perform axis-specific translationMatrix multiplication
 	    out[0]  = 1;
 	    out[1]  = 0;
 	    out[2]  = 0;
@@ -2667,21 +2667,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from the given angle around the Y axis
+	 * Creates a translationMatrix from the given angle around the Y axis
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat4.identity(dest);
 	 *     mat4.rotateY(dest, dest, rad);
 	 *
 	 * @param {mat4} out mat4 receiving operation result
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.fromYRotation = function(out, rad) {
 	    var s = Math.sin(rad),
 	        c = Math.cos(rad);
 
-	    // Perform axis-specific matrix multiplication
+	    // Perform axis-specific translationMatrix multiplication
 	    out[0]  = c;
 	    out[1]  = 0;
 	    out[2]  = -s;
@@ -2702,21 +2702,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from the given angle around the Z axis
+	 * Creates a translationMatrix from the given angle around the Z axis
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat4.identity(dest);
 	 *     mat4.rotateZ(dest, dest, rad);
 	 *
 	 * @param {mat4} out mat4 receiving operation result
-	 * @param {Number} rad the angle to rotate the matrix by
+	 * @param {Number} rad the angle to rotate the translationMatrix by
 	 * @returns {mat4} out
 	 */
 	mat4.fromZRotation = function(out, rad) {
 	    var s = Math.sin(rad),
 	        c = Math.cos(rad);
 
-	    // Perform axis-specific matrix multiplication
+	    // Perform axis-specific translationMatrix multiplication
 	    out[0]  = c;
 	    out[1]  = s;
 	    out[2]  = 0;
@@ -2737,7 +2737,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Creates a matrix from a quaternion rotation and vector translation
+	 * Creates a translationMatrix from a quaternion rotation and vector translation
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat4.identity(dest);
@@ -2789,7 +2789,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Creates a matrix from a quaternion rotation, vector translation and vector scale
+	 * Creates a translationMatrix from a quaternion rotation, vector translation and vector scale
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat4.identity(dest);
@@ -2846,7 +2846,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Creates a matrix from a quaternion rotation, vector translation and vector scale, rotating and scaling around the given origin
+	 * Creates a translationMatrix from a quaternion rotation, vector translation and vector scale, rotating and scaling around the given origin
 	 * This is equivalent to (but much faster than):
 	 *
 	 *     mat4.identity(dest);
@@ -2950,9 +2950,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Generates a frustum matrix with the given bounds
+	 * Generates a frustum translationMatrix with the given bounds
 	 *
-	 * @param {mat4} out mat4 frustum matrix will be written into
+	 * @param {mat4} out mat4 frustum translationMatrix will be written into
 	 * @param {Number} left Left bound of the frustum
 	 * @param {Number} right Right bound of the frustum
 	 * @param {Number} bottom Bottom bound of the frustum
@@ -2985,9 +2985,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Generates a perspective projection matrix with the given bounds
+	 * Generates a perspective projection translationMatrix with the given bounds
 	 *
-	 * @param {mat4} out mat4 frustum matrix will be written into
+	 * @param {mat4} out mat4 frustum translationMatrix will be written into
 	 * @param {number} fovy Vertical field of view in radians
 	 * @param {number} aspect Aspect ratio. typically viewport width/height
 	 * @param {number} near Near bound of the frustum
@@ -3017,11 +3017,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Generates a perspective projection matrix with the given field of view.
+	 * Generates a perspective projection translationMatrix with the given field of view.
 	 * This is primarily useful for generating projection matrices to be used
 	 * with the still experiemental WebVR API.
 	 *
-	 * @param {mat4} out mat4 frustum matrix will be written into
+	 * @param {mat4} out mat4 frustum translationMatrix will be written into
 	 * @param {number} fov Object containing the following values: upDegrees, downDegrees, leftDegrees, rightDegrees
 	 * @param {number} near Near bound of the frustum
 	 * @param {number} far Far bound of the frustum
@@ -3055,9 +3055,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	/**
-	 * Generates a orthogonal projection matrix with the given bounds
+	 * Generates a orthogonal projection translationMatrix with the given bounds
 	 *
-	 * @param {mat4} out mat4 frustum matrix will be written into
+	 * @param {mat4} out mat4 frustum translationMatrix will be written into
 	 * @param {number} left Left bound of the frustum
 	 * @param {number} right Right bound of the frustum
 	 * @param {number} bottom Bottom bound of the frustum
@@ -3090,9 +3090,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * Generates a look-at matrix with the given eye position, focal point, and up axis
+	 * Generates a look-at translationMatrix with the given eye position, focal point, and up axis
 	 *
-	 * @param {mat4} out mat4 frustum matrix will be written into
+	 * @param {mat4} out mat4 frustum translationMatrix will be written into
 	 * @param {vec3} eye Position of the viewer
 	 * @param {vec3} center Point the viewer is looking at
 	 * @param {vec3} up vec3 pointing up
@@ -3179,8 +3179,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Returns a string representation of a mat4
 	 *
-	 * @param {mat4} mat matrix to represent as a string
-	 * @returns {String} string representation of the matrix
+	 * @param {mat4} mat translationMatrix to represent as a string
+	 * @returns {String} string representation of the translationMatrix
 	 */
 	mat4.str = function (a) {
 	    return 'mat4(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + a[3] + ', ' +
@@ -3192,7 +3192,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Returns Frobenius norm of a mat4
 	 *
-	 * @param {mat4} a the matrix to calculate Frobenius norm of
+	 * @param {mat4} a the translationMatrix to calculate Frobenius norm of
 	 * @returns {Number} Frobenius norm
 	 */
 	mat4.frob = function (a) {
@@ -3704,13 +3704,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	quat.normalize = vec4.normalize;
 
 	/**
-	 * Creates a quaternion from the given 3x3 rotation matrix.
+	 * Creates a quaternion from the given 3x3 rotation translationMatrix.
 	 *
 	 * NOTE: The resultant quaternion is not normalized, so you should be sure
 	 * to renormalize the quaternion yourself where necessary.
 	 *
 	 * @param {quat} out the receiving quaternion
-	 * @param {mat3} m rotation matrix
+	 * @param {mat3} m rotation translationMatrix
 	 * @returns {quat} out
 	 * @function
 	 */
@@ -4260,7 +4260,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *
 	 * @param {vec3} out the receiving vector
 	 * @param {vec3} a the vector to transform
-	 * @param {mat4} m matrix to transform with
+	 * @param {mat4} m translationMatrix to transform with
 	 * @returns {vec3} out
 	 */
 	vec3.transformMat4 = function(out, a, m) {
@@ -4278,7 +4278,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *
 	 * @param {vec3} out the receiving vector
 	 * @param {vec3} a the vector to transform
-	 * @param {mat4} m the 3x3 matrix to transform with
+	 * @param {mat4} m the 3x3 translationMatrix to transform with
 	 * @returns {vec3} out
 	 */
 	vec3.transformMat3 = function(out, a, m) {
@@ -4928,7 +4928,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *
 	 * @param {vec4} out the receiving vector
 	 * @param {vec4} a the vector to transform
-	 * @param {mat4} m matrix to transform with
+	 * @param {mat4} m translationMatrix to transform with
 	 * @returns {vec4} out
 	 */
 	vec4.transformMat4 = function(out, a, m) {
@@ -5433,7 +5433,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *
 	 * @param {vec2} out the receiving vector
 	 * @param {vec2} a the vector to transform
-	 * @param {mat2} m matrix to transform with
+	 * @param {mat2} m translationMatrix to transform with
 	 * @returns {vec2} out
 	 */
 	vec2.transformMat2 = function(out, a, m) {
@@ -5449,7 +5449,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *
 	 * @param {vec2} out the receiving vector
 	 * @param {vec2} a the vector to transform
-	 * @param {mat2d} m matrix to transform with
+	 * @param {mat2d} m translationMatrix to transform with
 	 * @returns {vec2} out
 	 */
 	vec2.transformMat2d = function(out, a, m) {
@@ -5466,7 +5466,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *
 	 * @param {vec2} out the receiving vector
 	 * @param {vec2} a the vector to transform
-	 * @param {mat3} m matrix to transform with
+	 * @param {mat3} m translationMatrix to transform with
 	 * @returns {vec2} out
 	 */
 	vec2.transformMat3 = function(out, a, m) {
@@ -5484,7 +5484,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *
 	 * @param {vec2} out the receiving vector
 	 * @param {vec2} a the vector to transform
-	 * @param {mat4} m matrix to transform with
+	 * @param {mat4} m translationMatrix to transform with
 	 * @returns {vec2} out
 	 */
 	vec2.transformMat4 = function(out, a, m) {

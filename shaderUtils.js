@@ -109,7 +109,7 @@ function setupProgram(gl, vertexShader, fragmentShader) {
 	return shaderProgram;
 }
 
-// Implementation of matrix stack
+// Implementation of translationMatrix stack
 
 function MatrixStack() {
     "use strict";
